@@ -21,7 +21,7 @@ public enum FontFamily {
  * A modifier that sets the font to an automatically scaling font, using the provided properties.
  */
 
-public struct DynamicFontModifier: ViewModifier {
+public struct DynamicFontViewModifier: ViewModifier {
     let fontFamily: FontFamily
     let baseFontSize: CGFloat
     let fontWeight: Font.Weight
@@ -65,7 +65,7 @@ extension View {
     /// - parameter family: The family of the font to use inside this view.
     /// - parameter fontSize: The font size to use for the default content size category, e.g. 17 for body.
     /// - parameter weight: The weight to apply to the font.
-    public func dynamicFont(family: FontFamily, baseSize: CGFloat, weight: Font.Weight) -> ModifiedContent<Self, DynamicFontModifier> {
-        modifier(DynamicFontModifier(fontFamily: family, baseFontSize: baseSize, fontWeight: weight))
+    public func dynamicFont(family: FontFamily, baseSize: CGFloat, weight: Font.Weight) -> ModifiedContent<Self, DynamicFontViewModifier> {
+        modifier(DynamicFontViewModifier(fontFamily: family, baseFontSize: baseSize, fontWeight: weight))
     }
 }
