@@ -7,8 +7,9 @@ import SwiftUI
 public struct FullWidthViewModifier: ViewModifier {
     public func body(content: Content) -> some View {
         HStack {
+            Spacer(minLength: 0)
             content
-            Spacer()
+            Spacer(minLength: 0)
         }
     }
 }
