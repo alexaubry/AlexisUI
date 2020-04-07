@@ -27,6 +27,6 @@ public struct StandaloneScrollView<Content: View>: View {
                     Spacer()
                 }
             }.edgesIgnoringSafeArea(.all)
-        }.background(Color(.secondarySystemBackground).edgesIgnoringSafeArea(.all))
+        }.background(Color(.systemGroupedBackground).edgesIgnoringSafeArea(.all))
     }
 }
