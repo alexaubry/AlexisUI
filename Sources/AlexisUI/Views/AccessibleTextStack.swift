@@ -8,6 +8,8 @@ public struct AccessibleTextStack<Content: View>: View {
 
     public init(horizontalSpacing: CGFloat? = nil, verticalSpacing: CGFloat? = nil, @ViewBuilder content: () -> Content) {
         self.content = content()
+        self.horizontalSpacing = horizontalSpacing
+        self.verticalSpacing = verticalSpacing
     }
 
     public var body: some View {
