@@ -36,7 +36,7 @@ extension UIContentSizeCategory {
 }
 
 extension ContentSizeCategory {
-    var alx_isAccessibilityCategory: Bool {
+    public var alx_isAccessibilityCategory: Bool {
         if #available(iOS 13.4, *) {
             return isAccessibilityCategory
         } else {
