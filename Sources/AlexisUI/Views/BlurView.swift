@@ -2,12 +2,10 @@ import UIKit
 import SwiftUI
 
 public struct BlurView: UIViewRepresentable {
-    let lightBlurEffectStyle: UIBlurEffect.Style
-    let darkBlurEffectStyle: UIBlurEffect.Style
+    let style: UIBlurEffect.Style
 
-    public init(light: UIBlurEffect.Style, dark: UIBlurEffect.Style) {
-        self.lightBlurEffectStyle = light
-        self.darkBlurEffectStyle = dark
+    public init(style: UIBlurEffect.Style) {
+        self.style = style
     }
 
     public func makeUIView(context: Context) -> UIVisualEffectView {
@@ -21,13 +19,6 @@ public struct BlurView: UIViewRepresentable {
     }
 
     private func applyEffect(to uiView: UIVisualEffectView, context: Context) {
-        switch context.environment.colorScheme {
-        case .light:
-            uiView.effect = UIBlurEffect(style: lightBlurEffectStyle)
-        case .dark:
-            uiView.effect = UIBlurEffect(style: darkBlurEffectStyle)
-        @unknown default:
-            uiView.effect = UIBlurEffect(style: lightBlurEffectStyle)
-        }
+        uiView.effect = UIBlurEffect(style: style)
     }
 }

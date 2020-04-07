@@ -19,7 +19,7 @@ public struct StandaloneScrollView<Content: View>: View {
 
             GeometryReader { geometry in
                 VStack {
-                    BlurView(light: .light, dark: .dark)
+                    BlurView(style: .systemChromeMaterial)
                         .frame(width: geometry.size.width,
                                height: geometry.safeAreaInsets.top,
                                alignment: .top)
